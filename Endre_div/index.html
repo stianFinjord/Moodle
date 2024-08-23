@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Endre div</title>
+</head> 
+<body>
+    <h2>Klikk på knappene under for å endre på div-en</h2>
+    <div id="dynamicDiv" style="font-size: 14px;">Her er innholdet i div-en</div>
+    <div>
+        Farge:
+        <button onclick="changeDivColor('blue')">Blå</button>
+        <button onclick="changeDivColor('red')">Rød</button>
+        <button onclick="changeDivColor('green')">Grønn</button>
+    </div>
+    <div>
+        Størrelse:
+        <button onclick="changeTextSize(1)">Større</button>
+        <button onclick="changeTextSize(-1)">Mindre</button>
+    </div>
+    <div>
+        Endre tekst og farge:
+        <button onclick="changeColorAndText('gray', 'Dette er en ny og bedre tekst')">Ny tekst</button>
+        <button onclick="changeColorAndText('orange', 'Dette er en ny og enda bedre tekst')">Enda en ny tekst</button>
+    </div>
+    <script>
+        let varFontSize = 14;
+        function changeDivColor(color) {
+            document.getElementById("dynamicDiv").style.backgroundColor = color;
+        }
+        
+        function changeTextSize(textIncrease) {
+            varFontSize += textIncrease;
+            document.getElementById("dynamicDiv").style.fontSize = varFontSize + 'px';
+        }
+        
+        function changeColorAndText(newColor, newText) {
+            document.getElementById("dynamicDiv").style.backgroundColor = newColor;
+            document.getElementById("dynamicDiv").innerHTML = newText;
+
+        }
+    </script>
+</body>
+</html>
